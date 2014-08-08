@@ -5,13 +5,7 @@ set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions 
 
 
 add_image_size( 'blog', null,null); 
-add_image_size( 'cardapio', 150, 150 ); 
-add_image_size( 'slide', 1005, 495 ); 
-add_image_size( 'social', 40, 40 ); 
-add_image_size( 'social-mini', 60, 60 ); 
-add_image_size( 'social-medium', 160, 45 ); 
-add_image_size( 'blog-single', 476,215);
-add_image_size( 'minuatura', 479,215); 
+
 
 if ( function_exists( 'register_nav_menu' ) ) {
 register_nav_menu( 'primary', 'Este é meu primeiro menu' );
@@ -47,22 +41,6 @@ wp_enqueue_script('jquery');
  wp_register_script('bootstrap', get_bloginfo('template_url').'/js/bootstrap.min.js');
  wp_enqueue_script('bootstrap');
 
-
-//====================== bootstrap-collapse
- wp_register_script('bootstrap-collapse', get_bloginfo('template_url').'/js/bootstrap-collapse.js');
- wp_enqueue_script('bootstrap-collapse');
-
-//====================== bootstrap-dropdown
- wp_register_script('bootstrap-dropdown', get_bloginfo('template_url').'/js/bootstrap-dropdown.js');
- wp_enqueue_script('bootstrap-dropdown');
-
-//====================== bootstrap-dropdown
- wp_register_script('bootstrap-dropdown', get_bloginfo('template_url').'/js/bootstrap-dropdown.js');
- wp_enqueue_script('bootstrap-dropdown');
-
-//====================== easing
- wp_register_script('easing', get_bloginfo('template_url').'/js/jquery.easing.min.js');
- wp_enqueue_script('easing');
 
 
 /* Desenvolvido por Michel Damasceno */
