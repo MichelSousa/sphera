@@ -1,0 +1,24 @@
+/* 
+Theme Name: Sphera
+Author: Michel Damasceno
+Author URI: http://visolutions.com.br/
+
+*/
+
+* {
+margin:0;
+padding: 0;
+list-style:none;
+vertical-align:baseline;
+}
+
+
+
+/*================================ LOGO*/
+
+.logo
+{
+  float:left;
+  margin-right:127px;
+  margin-top:7px;
+}
