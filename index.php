@@ -88,7 +88,7 @@
 
             <div class="col-lg-4">
 
-              <h2>Heading</h2>
+             <h2><a href="">Heading</a></h2>
               <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
 
             </div>
@@ -110,7 +110,7 @@
                 <div data-target="#carousel" data-slide-to="0" class="">
                     <div class="col-lg-4">
                       <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                      <h2>Heading</h2>
+                      <h2><a href="">Heading</a></h2>
                       <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                      
                     </div><!-- /.col-lg-4 -->
@@ -121,7 +121,7 @@
                    <div data-target="#carousel" data-slide-to="1" class="">
                         <div class="col-lg-4">
                           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                          <h2>Heading</h2>
+                          <h2><a href="">Heading</a></h2>
                           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                          
                         </div><!-- /.col-lg-4 -->
@@ -131,7 +131,7 @@
                      <div data-target="#carousel" data-slide-to="2" class="">
                         <div class="col-lg-4">
                           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                          <h2>Heading</h2>
+                          <h2><a href="">Heading</a></h2>
                           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                         
                         </div><!-- /.col-lg-4 -->
@@ -163,24 +163,30 @@
               <div class="container">
                   <div class="col-lg-4">
 
-                          <img class="" src="<?php bloginfo("template_url")?>/img/img1-differential.png" alt="Generic placeholder image" >
-                          <h2>Heading</h2>
+                         <div class="featured-image">
+                         <img class="" src="<?php bloginfo("template_url")?>/img/img1-differential.png" alt="Generic placeholder image" >
+                         </div>
+
+                          <h2><a href="">Heading</a></h2>
                           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                          
                    </div><!-- /.col-lg-4 -->
 
                    <div class="col-lg-4">
 
+                          <div class="featured-image">
                           <img class="" src="<?php bloginfo("template_url")?>/img/img2-differential.png" alt="Generic placeholder image" >
-                          <h2>Heading</h2>
+                          </div>
+                          <h2><a href="">Heading</a></h2>
                           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                          
                    </div><!-- /.col-lg-4 -->
 
                    <div class="col-lg-4">
-
+                          <div class="featured-image">
                           <img class="" src="<?php bloginfo("template_url")?>/img/img3-differential.png" alt="Generic placeholder image" >
-                          <h2>Heading</h2>
+                          </div>
+                          <h2><a href="">Heading</a></h2>
                           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
                          
                    </div><!-- /.col-lg-4 -->
@@ -188,7 +194,11 @@
          </section>  <!-- /.END section-differential -->
 
          <section id="section-products" class="col-lg-12 col-sm-12 col-xs-12 text-center">
-             <h1 class="title-section">Produtos</h1>     
+             <h1 class="title-section">Produtos</h1>   
+
+              <div class="container">
+                       sdsdsd
+              </div>  
          </section>  <!-- /.END section-products -->
              
 
