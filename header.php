@@ -20,6 +20,9 @@
     <link href="<?php bloginfo("template_url")?>/css/carousel.css" rel="stylesheet">
 
     <link href="<?php bloginfo("template_url")?>/style.css" rel="stylesheet">
+
+    <?php wp_head()?>
+
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -44,15 +47,25 @@
               </button>
             
             </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-              
-                 
-              </ul>
-            </div>
+             <?php  
+
+           wp_nav_menu(array(
+            
+            'container' => 'div',
+            'container_class' => 'collapse navbar-collapse',
+            'container_id' => '',
+           'menu_class' => 'nav navbar-nav menu',
+            'echo' => true,
+            'menu_id' => '',
+            'before' => '',
+            'after' =>'',
+            'link_before' =>'',
+            'link_after' =>'',
+            'depth' => 0,
+            'walker' =>'',
+            ) );
+          ?>
+
           </div>
         </div>
 

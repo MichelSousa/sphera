@@ -7,68 +7,186 @@
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+ 
+        <div class="col-lg-12 col-sm-12 col-xs-12 text-center ">
 
+         <div class="highlight">
+
+          <h2 class="highlight-title">Fazemos do nosso um ambiente único</h2>
+          <p class="text-highlight"> fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris </p>
+         
+         </div><!-- /.END highlight -->
+
+        </div><!-- /.col-lg-4 -->
 
       <!-- START THE FEATURETTES -->
+         
+        <section id="slide-posts" class="col-lg-12 col-sm-12 col-xs-12 text-center">
 
-      <hr class="featurette-divider">
+            <h1>SPHERA</h1>
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
+            <p>fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris </p>
 
-      <hr class="featurette-divider">
+         <div class="slide-featturettes" style="width:642px;height:380px">
 
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
+          <?php query_posts("showposts=1&category_name=slide-posts")?>
 
-      <hr class="featurette-divider">
+          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    
+             <?php the_content()?>
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
+          <?php endwhile;else : ?>
 
-      <hr class="featurette-divider">
+          <?php endif; ?>
 
-      <!-- /END THE FEATURETTES -->
+         
+         </div><!-- /.END slide-featturettes -->
+
+        </section><!-- /.slide-posts -->
+
+      
+
+        <section id="section-stats" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+           <!-- Three columns of text below the carousel -->
+            <div class="row">
+
+              <article class="col-lg-4">
+            
+                <h1>29</h1>
+                <h2>projetos Desenvolvidos</h2>
+                
+              </article><!-- /.col-lg-4 -->
+
+              <article class="col-lg-4">
+             
+                <h1 style="color:#fff">1,200</h1>
+                <h2>Clientes Satisfeitos</h2>
+
+              </article><!-- /.col-lg-4 -->
+
+              <article class="col-lg-4">
+                
+                <h1>150</h1>
+                <h2>artigos publicados</h2>
+                
+              </article><!-- /.col-lg-4 -->
+
+             </div> <!-- /.row -->  
+
+        </div> <!-- /.container -->  
+
+         </section>   <!-- /.END section-stats -->
+
+         <section id="section-quotes" class="col-lg-12 col-sm-12 col-xs-12">
+            
+           <div class="container"> 
+            <div class="col-lg-5">
+              <img class="img-circle img-responsive" src="<?php bloginfo("template_url")?>/img/img.png" alt="Generic placeholder image" style="width: 483px; height: 483px;">
+              
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-4">
+
+              <h2>Heading</h2>
+              <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+
+            </div>
+
+           </div><!-- /.container --> 
+
+         </section> <!-- /.END section-quotes --> 
+
+         <div class="container">
+
+         <section id="section-team" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+          <div id="thumbcarousel" class="carousel " data-interval="false">
+            <div class="carousel-inner">
+                <div class="item active">
+
+                <div data-target="#carousel" data-slide-to="0" class="">
+                    <div class="col-lg-4">
+                      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                      <h2>Heading</h2>
+                      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                     
+                    </div><!-- /.col-lg-4 -->
+          
+                </div><!-- /item -->
+
+                <div class="item">
+                   <div data-target="#carousel" data-slide-to="1" class="">
+                        <div class="col-lg-4">
+                          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                          <h2>Heading</h2>
+                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                         
+                        </div><!-- /.col-lg-4 -->
+                     </div>
+
+            
+                     <div data-target="#carousel" data-slide-to="2" class="">
+                        <div class="col-lg-4">
+                          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                          <h2>Heading</h2>
+                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                        
+                        </div><!-- /.col-lg-4 -->
+                     </div>
+                     
+                </div><!-- /item -->
+
+            </div><!-- /carousel-inner -->
+            <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#thumbcarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+
+          </div> <!-- /thumbcarousel -->
+
+         </div> <!-- /container -->
+
+         </section> <!-- /.END section-clients --> 
+
+         <section id="section-differential" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+         </section>  <!-- /.END section-differential -->
+
+         <section id="section-products" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+         </section>  <!-- /.END section-products -->
+
+         <section id="section-promotions" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+         </section>  <!-- /.END section-promotions -->
+
+
+         <section id="section-recents" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+         </section>  <!-- /.END section-recents -->
+
+
+         <section id="section-service" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+         </section>  <!-- /.END section-service -->
+
+
+        <section id="recent-publications" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+        </sction>  <!-- /.END recent-publications -->
+
+
+        <footer id="footer">
+           
+
+         <section id="contact" class="col-lg-12 col-sm-12 col-xs-12 text-center">
+
+         </sction>  <!-- /.END contact -->
+
+
+        </footer><!-- /.END footer -->
 
       <?php get_footer()?>

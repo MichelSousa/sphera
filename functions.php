@@ -41,6 +41,10 @@ wp_enqueue_script('jquery');
  wp_register_script('bootstrap', get_bloginfo('template_url').'/js/bootstrap.min.js');
  wp_enqueue_script('bootstrap');
 
+ //====================== bootstrap
+ wp_register_script('team', get_bloginfo('template_url').'/js/team.js');
+ wp_enqueue_script('team');
+
 
 
 /* Desenvolvido por Michel Damasceno */
