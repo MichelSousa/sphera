@@ -30,7 +30,7 @@ return $excerpt;
 
 
 
-add_action( 'wp_head', 'sushiai_css_customizer' );
+
 
 add_action( 'customize_register', 'gamesquare_customize_register' );
 
@@ -41,9 +41,14 @@ wp_enqueue_script('jquery');
  wp_register_script('bootstrap', get_bloginfo('template_url').'/js/bootstrap.min.js');
  wp_enqueue_script('bootstrap');
 
- //====================== bootstrap
+ //====================== team
  wp_register_script('team', get_bloginfo('template_url').'/js/team.js');
  wp_enqueue_script('team');
+
+ //====================== tab
+ wp_register_script('tab', get_bloginfo('template_url').'/js/tab.js');
+ wp_enqueue_script('tab');
+
 
 
 
@@ -142,21 +147,6 @@ $wp_customize->add_control('sushiai_endereco_text', array(
 )  );
 
 }
-
-
-function sushiai_css_customizer()
-{
-
-	?>
-
- <style type="text/css">
-     body{ background-color:#<?php echo get_theme_mod('background_color') ; ?>  }
- </style>
-
-	<?php
-}
-
-
 
 
 // Registrar áreas de widgets
