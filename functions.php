@@ -165,6 +165,23 @@ function theme_widgets_init() {
  
   ) );
 
+ register_sidebar( array (
+ 'name' => 'Sidebar',
+ 'id' => 'sidebar',
+ 'before_title' => '<h2  class="title-sidebar">',
+  'after_title'  => '</h2>'
+
+  ) );
+
+  register_sidebar( array (
+ 'name' => 'Sidebar404',
+ 'id' => 'sidebar404',
+ 'before_title' => '<h2  class="title-sidebar">',
+  'after_title'  => '</h2>'
+
+  ) );
+
+
 
 } // end theme_widgets_init
  
