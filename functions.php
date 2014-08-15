@@ -66,7 +66,7 @@ $wp_customize->add_section( 'theme_image' , array(
 ) );
 
 $wp_customize->add_setting( 'theme_logo_image' , array(
-    'default'     => 'http://preview.vicomercial.com.br/sushiai/wp-content/themes/sushiai/img/logo.png',
+    'default'     => '',
 ) );
 
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'theme_logo_image', array(
@@ -76,56 +76,23 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'them
 ) ) );
 
 
-//===================== Upload do logo cardápio
 
-$wp_customize->add_section( 'sushiai_image_cardapio' , array(
-     'title'     => __( 'Image cardápio', 'sushiai' ),
-      'description'   => 'Modifique o logo da seção cardápio',
-) );
-
-$wp_customize->add_setting( 'logo_image_cardapio' , array(
-    'default'     => 'http://preview.vicomercial.com.br/sushiai/wp-content/themes/sushiai/img/logo.png',
-) );
-
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_image_cardapio', array(
-	'label'        => __( 'Logo Cardapio', 'sushiai' ),
-	'section'    => 'sushiai_image_cardapio',
-	'settings'   => 'logo_image_cardapio',
-) ) );
-
-
-//===================== Url like facebook box
-
-$wp_customize->add_section( 'sushiai_box_facebook' , array(
-     'title'     => __( 'Url like facebook box', 'sushiai' ),
-      'description'   => 'URL  like box facebook',
-) );
-
-$wp_customize->add_setting( 'ur_like_facebook' , array(
-    'default'     => 'https://www.facebook.com/FacebookDevelopers',
-) );
-
-$wp_customize->add_control('url_like', array(
-	'label'        => __( 'url', 'sushiai' ),
-	'section'    => 'sushiai_box_facebook',
-	'settings'   => 'ur_like_facebook',
-)  );
 
 //===================== Número de telefone
 
-$wp_customize->add_section( 'sushiai_fone' , array(
-     'title'     => __( 'Número de telefone', 'sushiai' ),
-      'description'   => 'Digite o número de telefone',
+$wp_customize->add_section( 'theme_text' , array(
+     'title'     => __( 'Digite o texto de boas vindas', 'theme' ),
+      'description'   => 'Digite o um texto',
 ) );
 
-$wp_customize->add_setting( 'text_fone' , array(
-    'default'     => '(41) 3672-4116',
+$wp_customize->add_setting( 'text_welcome' , array(
+    'default'     => 'Fazemos do nosso um ambiente único',
 ) );
 
-$wp_customize->add_control('sushiai_fone_text', array(
-  'label'        => __( 'url', 'sushiai' ),
-  'section'    => 'sushiai_fone',
-  'settings'   => 'text_fone',
+$wp_customize->add_control('welcome_text', array(
+  'label'        => __( '', 'theme' ),
+  'section'    => 'theme_text',
+  'settings'   => 'text_welcome',
 )  );
 
 

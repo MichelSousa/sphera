@@ -34,23 +34,29 @@ h2
 
 .marketing
 {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .highlight-title
 {
   background: #8A57A4;
-  padding: 10px;
+  padding: 30px;
   color:#fff;
   margin-bottom: 25px;
+  border: solid 6px #FFFFFF;
+  outline: solid 6px #8A57A4;
 }
 
 .text-highlight
 {
-  color:#4A2F58;
+  color:#4B235F;
   text-transform: uppercase;
   margin-top: 15px ;
+  font-size: 22px;
+  font-weight: 600;
+
 }
+
 
 /*================================ slide-posts*/
 
@@ -77,6 +83,7 @@ h2
     text-transform: uppercase;
     margin-top: 15px;
     color:#939393 !important;
+    font-size: 17px;
 }
 
 .slide-featturettes 
@@ -86,7 +93,8 @@ h2
   -webkit-border-radius: 8px ;
   border-radius: 8px ;
   border:12px solid #8A57A4;
-  margin: 44px 0px 69px 0px;
+  margin: 52px 0px 69px 0px;
+  max-width:566px;height:380px
 }
 
 
@@ -970,7 +978,12 @@ li
 
 }
 
-.info,.title-page,.leia-mais-page,.sidebar a
+.info,.title-page,
+.leia-mais-page,
+.sidebar a,
+.container-page-header a,
+.posts-search a ,
+.posts-search .col-lg-8
 {
     transition: all 1s ease 0s;
   -moz-transition: all 1s ease 0s;
@@ -990,7 +1003,10 @@ li
 
 }
 
-.info a:hover,.sidebar a:hover
+.info a:hover,
+.sidebar a:hover,
+.container-page-header a:hover,
+.posts-search a:hover
 {
   color:#8B57A5;
   text-decoration: none;
@@ -1100,11 +1116,11 @@ li
   left: 5px;
 }
 
-.container-page,.container-page-404
+.container-page,
+.container-page-404
 {
   margin-top: 110px;
 }
-
 
 .shared
 {
@@ -1142,10 +1158,6 @@ li
    cursor: pointer;
 }
 
-.icon-social
-{
-
-}
 
 /*================================ #404*/
 
@@ -1164,11 +1176,100 @@ li
   margin-bottom: 131px;
 }
 
+.header-page span
+{
+  float: left;
+}
+
 .container-page-404 .row
 {
   margin-top: 90px;
 }
 
+.header-page
+{
+  background: #D5C2DE;
+  padding: 22px;
+  color: #fff;
+  font-size: 30px;
+  overflow: hidden;
+}
+
+.header-page span
+{
+  margin-right: 20px;
+}
+
+.header-page
+{
+  margin-top: 116px;
+}
+
+.container-page-header
+{
+   max-width:1424px !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.container-page-header a
+{
+  color: #fff;
+  text-decoration: underline;
+}
+
+/*================================ #posts-search*/
+
+.posts-search
+{
+  background: #B09DBA;
+  max-height: 1433px;
+  padding: 25px 59px 25px 59px;
+  overflow: hidden;
+  margin-bottom: 55px;
+  -moz-border-radius:12px;
+  border-radius:12px;
+  -webkit-border-radius:12px;
+}
+
+.posts-search a
+{
+  color: #fff;
+  font-size:36px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.posts-search p
+{
+   color: #fff;
+   font-size: 30px;
+}
+
+.sep
+{
+  border-top:2px solid #FFF; 
+  height: 2px;
+  width: 150px
+}
+
+.posts-search .col-lg-8
+{
+  padding-top: 3px;
+}
+.posts-search .col-lg-8:hover
+{
+background: #7C5D8E;
+
+}
+
+.posts-search h2
+{
+  margin-top: 4px;
+}
 
 @import url("css/_home.css");
 

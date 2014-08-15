@@ -1,5 +1,19 @@
 <?php  get_header() ?>
 
+
+<header class="header-page">
+
+  <div class="container-page-header" style="">
+    <?php $categories = get_categories('$post-ID'); ?>
+     <span><?php the_title()?></span> <span>  
+     <?php $cat = get_the_category( $post->ID );
+           foreach($cat as $category) {?>
+            <span><img src="<?php bloginfo("template_url")?>/img/separator.png"> </span><span> <a href="<?php get_category_link( $cat->term_id )?>"> <?php echo $category->cat_name; ?></a> </span>
+          <?php } ?>
+  </div>  <!-- / container-page  --> 
+
+</header><!-- / header-page  -->
+
 <div class="container-page">
   
   <?php get_sidebar()?>
