@@ -2,9 +2,15 @@
 if ( function_exists( 'add_theme_support' ) ) { 
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
-
+ 
 
 add_image_size( 'blog', null,null); 
+add_image_size( 'diferencial', 183,156); 
+add_image_size( 'bio', 483,483); 
+add_image_size( 'icon-servico', 43,41); 
+add_image_size( 'recent-publications', 324,157); 
+add_image_size( 'promocao', 398,303); 
+
 
 
 if ( function_exists( 'register_nav_menu' ) ) {

@@ -16,6 +16,17 @@ vertical-align:baseline;
 
 /*================================ LOGO*/
 
+.icon-top,.icon-bottom
+{
+    position: relative;
+    top: 47px;
+    z-index: 1;
+}
+
+.icon-bottom
+{
+  top: -47px;
+}
 
 .logo
 {
@@ -36,6 +47,8 @@ h2
 {
   margin-top: 40px;
 }
+
+
 
 .highlight-title
 {
@@ -156,7 +169,7 @@ h2
 #section-quotes
 {
 
-  margin-bottom: 89px;
+
 }
 
 .full-width
@@ -224,6 +237,7 @@ h2
 #section-team
 {
    margin-bottom:129px;
+    margin-top: 40px;
 }
 
 #section-team .carousel-control .icon-prev, 
@@ -331,7 +345,7 @@ h2
 
 #section-differential
 {
-  padding-bottom:91px; 
+ /* padding-bottom:91px; */
 
 }
 
@@ -349,6 +363,24 @@ h2
 {
   font-size: 19px;
   color: #000;
+}
+
+.border-bottom
+{
+
+  border-radius: 8px;
+  background:#C1A7CE ;
+  width:317px !important;
+  padding: 10px;
+  max-width: 317px;
+}
+
+#section-differential p
+{
+  color: #525151;
+  font-size: 26px;
+  margin-bottom: 51px;
+
 }
 
 #section-differential .col-lg-4 h2 a
@@ -538,9 +570,6 @@ h2
   margin-right:-130px;
 }
 
-
-
-
 #thumbcarousel3 img
 {
   border: 1px solid #8B57A5;
@@ -553,8 +582,6 @@ h2
   border: 1px solid #D0D0D0;
   margin: 10px 0px 37px 0px;
   padding-top: 10px
-
-
 }
 
 .top-box h2
@@ -562,8 +589,6 @@ h2
   padding-bottom: 5px;
   color:#323232;
 }
-
-
 
 .btn-sphera 
 {
@@ -579,8 +604,6 @@ h2
   font-size: 26px;
   cursor: pointer;
   background-color: #fff;
-
-
 }
 
 .btn-sphera:hover
@@ -590,13 +613,11 @@ h2
   color: #000;
 }
 
-
-
 /*================================ #section-promotions*/
 
 #section-promotions
 {
-  margin-bottom: 130px;
+ /* margin-bottom: 130px;*/
 }
 
 #section-promotions .carousel-control .icon-prev, 
@@ -675,14 +696,17 @@ h2
   padding-top: 50px
 }
 
-
-
-
 /*================================ #section-service*/
 
 #section-service
 {
   padding-bottom:91px; 
+}
+
+#recent-publications .leia-mais
+{
+  background: #8B57A5 !important;
+  color: #fff;
 }
 
 #section-service .col-lg-4 h2 a 
@@ -775,7 +799,6 @@ h2
   color: #fff;
 }
 
-
 .months
 {
   font-size: 14px;
@@ -789,7 +812,42 @@ h2
 #recent-publications p
 {
    text-align: left;
+   color: #949494;
+   font-size: 17px;
 }
+
+.wpcf7-text ,.wpcf7-textarea
+{
+  background:#BEAFB9 ;
+  padding: 5px;
+  border: none;
+  width: 100%;
+}
+
+.wpcf7-form
+{
+    color: #fff;
+    font-size: 15px;
+    text-align: left;
+}
+
+.wpcf7-submit
+{
+  max-width: 187px;
+  background: #8B57A5;
+  color: #fff;
+  font-size: 26px;
+  border: none;
+  padding: 7px 95px 7px 95px;
+   transition:all 1s ;
+  -moz-transition:all 1s ;
+  -webkit-transition:all 1s ;
+}
+
+.wpcf7-submit:hover
+{
+  background: #000;
+
 }
 
 /*================================ #section-recents*/
@@ -798,9 +856,6 @@ h2
 {
   padding-bottom:91px; 
 }
-
-
-
 
 /*================================ #contact*/
 #contact
@@ -838,10 +893,6 @@ li
 {
 	list-style: none;
 }
-
-
-.social img:nth-child(2n)
-
 
 .social img:hover
 {
@@ -1270,6 +1321,8 @@ background: #7C5D8E;
 {
   margin-top: 4px;
 }
+
+
 
 @import url("css/_home.css");
 

@@ -73,26 +73,26 @@
            <!-- Three columns of text below the carousel -->
             <div class="row">
 
+         
+
+          <?php 
+
+               query_posts("showposts=3&category_name=estatisticas");
+               if ( have_posts() ) : while ( have_posts() ) : the_post();
+                $valor = get_post_meta($post->ID, 'valor', true); 
+
+           ?>
+     
               <article class="col-lg-4">
             
-                <h1>29</h1>
-                <h2>projetos Desenvolvidos</h2>
+                <h1><?php echo $valor;?></h1>
+                <h2><?php the_title()?></h2>
                 
               </article><!-- /.col-lg-4 -->
 
-              <article class="col-lg-4">
-             
-                <h1 style="color:#fff">1,200</h1>
-                <h2>Clientes Satisfeitos</h2>
+          <?php endwhile;else : ?>
 
-              </article><!-- /.col-lg-4 -->
-
-              <article class="col-lg-4">
-                
-                <h1>150</h1>
-                <h2>artigos publicados</h2>
-                
-              </article><!-- /.col-lg-4 -->
+          <?php endif; ?>
 
              </div> <!-- /.row -->  
 
@@ -100,27 +100,57 @@
 
          </section>   <!-- /.END section-stats -->
 
+           <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+           <span class="icon-top">
+            <img src="<?php bloginfo("template_url")?>/img/icon-top-section-bio.png">
+           </span><!-- /.END icon-top -->
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
+
          <section id="section-quotes" class="col-lg-12 col-sm-12 col-xs-12 full-width">
             
            <div class="container"> 
 
+             <?php 
+
+               query_posts("showposts=1&category_name=biografia");
+               if ( have_posts() ) : while ( have_posts() ) : the_post();
+              
+
+              ?>
+
             <div class="col-lg-5">
 
-              <img class="img-circle img-responsive" src="<?php bloginfo("template_url")?>/img/img.png" alt="Generic placeholder image" style="width: 483px; height: 483px;">
+               <?php the_post_thumbnail('bio', array('class' => 'img-responsive')); ?> 
               
             </div><!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
 
-             <h2><a href="">Heading</a></h2>
+             <h2>
+                <a title="<?php the_title()?>" href="<?php the_permalink()?>">
+                  <?php the_title()?>
+                 </a>
+             </h2>
 
-             <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+             <?php the_content()?>
 
             </div>
+
+
+          <?php endwhile;else : ?>
+
+          <?php endif; ?>
 
            </div><!-- /.container --> 
 
          </section> <!-- /.END section-quotes --> 
+
+
+           <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+           <span class="icon-bottom">
+            <img src="<?php bloginfo("template_url")?>/img/icon-bottom-section-bio.png">
+           </span><!-- /.END icon-top -->
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
 
          <div class="container">
 
@@ -183,40 +213,49 @@
 
          </section> <!-- /.END section-clients --> 
 
+           <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+           <span class="icon-top">
+            <img src="<?php bloginfo("template_url")?>/img/icon-top-section-diferencial.png">
+           </span><!-- /.END icon-top -->
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
+
          <section id="section-differential" class="col-lg-12 col-sm-12 col-xs-12 text-center full-width">
              <h1 class="title-section">Nosso diferencial</h1>   
               <div class="container">
+
+                   <?php 
+                     query_posts("showposts=3&category_name=diferencial");
+                     if ( have_posts() ) : while ( have_posts() ) : the_post();
+                     ?>
+
                   <div class="col-lg-4">
 
                          <div class="featured-image">
-                         <img class="" src="<?php bloginfo("template_url")?>/img/img1-differential.png" alt="Generic placeholder image" >
+                          <?php the_post_thumbnail('diferencial', array('id' => 'img-responsive')); ?> 
                          </div>
 
-                          <h2><a href="">Heading</a></h2>
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                          <h2><a href=""><?php the_title()?></a></h2>
+                          <?php the_content();?>
+
+                          <span class="col-lg-12 border-bottom"></span>
                          
                    </div><!-- /.col-lg-4 -->
 
-                   <div class="col-lg-4">
 
-                          <div class="featured-image">
-                          <img class="" src="<?php bloginfo("template_url")?>/img/img2-differential.png" alt="Generic placeholder image" >
-                          </div>
-                          <h2><a href="">Heading</a></h2>
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                         
-                   </div><!-- /.col-lg-4 -->
+                    <?php endwhile;else : ?>
 
-                   <div class="col-lg-4">
-                          <div class="featured-image">
-                          <img class="" src="<?php bloginfo("template_url")?>/img/img3-differential.png" alt="Generic placeholder image" >
-                          </div>
-                          <h2><a href="">Heading</a></h2>
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                         
-                   </div><!-- /.col-lg-4 -->
-              </div><!-- /.container-->
-         </section>  <!-- /.END section-differential -->
+                    <?php endif; ?>
+                
+                </div><!-- /.container-->
+
+          </section>  <!-- /.END section-differential -->
+
+           <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+            <span class="icon-bottom">
+            <img src="<?php bloginfo("template_url")?>/img/icon-bottom-section-diferencial.png">
+           </span><!-- /.END icon-top -->
+
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
 
          <section id="section-products" class="col-lg-12 col-sm-12 col-xs-12 text-center">
              <h1 class="title-section">Produtos</h1>   
@@ -289,7 +328,7 @@
                                     </div><!-- /.col-lg-4 -->
                                  </div>
                      
-                          '         
+                                   
                                           </div><!-- /item -->
                           
                                       </div><!-- /carousel-inner -->
@@ -441,58 +480,101 @@
 
          </section>  <!-- /.END section-products -->
              
+        <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+           <span class="icon-top">
+            <img src="<?php bloginfo("template_url")?>/img/icon-top-section-promocao.png">
+           </span><!-- /.END icon-top -->
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
 
          <section id="section-promotions" class="col-lg-12 col-sm-12 col-xs-12 text-center full-width">
+
              <h1 class="title-section">Promoções</h1>  
+
              <div class="container">
+
              <div id="thumbcarousel-promotions" class="carousel " data-interval="false">
-            <div class="carousel-inner">
-                <div class="item active">
+              
+             <div class="carousel-inner">
+                
+              <?php
 
-                <div data-target="#carousel" data-slide-to="0" class="">
-                    <div class="col-lg-6">
-                      <div class="bg-image">
-                      <img  src="<?php bloginfo("template_url")?>/img/img-promotions.gif">
-                      </div><!-- /.bg-image -->
-                      
-                      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+              $args = array( 'posts_per_page' => 100 ,'category_name'=>'promocao'  );
+              $the_query = new WP_Query( $args );
+              if ( $the_query->have_posts() ) :
+              $i = 0;
+              while ( $the_query->have_posts() ) : $the_query->the_post();
+               $file = get_post_meta($post->ID, 'file', true);
+              $i++;
+
+              if ( $i == 1 ) {
+
+              ?> 
+
+              <div class="item active">
+
+                      <?php } ?>
+
+                   <div class="col-md-6">
+
                      
-                    </div><!-- /.col-lg-4 -->
-          
-                </div><!-- /item -->
+                     <div class="bg-image">
 
-                <div class="item">
-                   <div data-target="#carousel" data-slide-to="1" class="">
-                        <div class="col-lg-6">
-                           <div class="bg-image">
-                           <img  src="<?php bloginfo("template_url")?>/img/img-promotions.gif">
-                        </div><!-- /.bg-image -->
-                        
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                         
-                        </div><!-- /.col-lg-4 -->
-                     </div>
+                       <?php the_post_thumbnail('promocao'); ?>
 
+                     </div><!-- END bg-image -->  
             
-                    
-                     
-                </div><!-- /item -->
+                      <?php $content = get_the_content();?>
+                 
+                       <p><?php echo wp_trim_words($content, 40);?></p>
 
-            </div><!-- /carousel-inner -->
+                   </div><!-- END col-md-6 -->  
+
+
+                    <?php 
+
+                      if ( $i % 3 == 0 && $i != 10 ) 
+
+                           { 
+                             
+                              echo  '</div><div class="item">';
+
+                           }
+
+                      endwhile;
+
+                               echo '</div>';
+
+                      wp_reset_postdata();
+
+                      endif;
+                      
+                      ?>
+                  </div>
+    
+
+          </div><!-- /carousel-inner -->
 
            
 
           </div> <!-- /thumbcarousel -->
 
-        </div><!-- /container -->
-
-           <a class="left carousel-control" href="#thumbcarousel-promotions" role="button" data-slide="prev">
+            <a class="left carousel-control" href="#thumbcarousel-promotions" role="button" data-slide="prev">
                 <span class=" glyphicon-chevron-left"></span>
             </a>
             <a class="right carousel-control" href="#thumbcarousel-promotions" role="button" data-slide="next">
                 <span class=" glyphicon-chevron-right"></span>
             </a>     
+
+        </div><!-- /container -->
+
+         
          </section>  <!-- /.END section-promotions -->
+
+         <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+           <span class="icon-bottom">
+            <img src="<?php bloginfo("template_url")?>/img/icon-bottom-section-promocao.png">
+           </span><!-- /.END icon-top -->
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
 
 
          <section id="section-recents" class="col-lg-12 col-sm-12 col-xs-12 text-center">
@@ -582,48 +664,53 @@
                
          </section>  <!-- /.END section-recents -->
 
+         <!-- /.home section-service-->
+
+        <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+           <span class="icon-top">
+            <img src="<?php bloginfo("template_url")?>/img/icon-topsection-servico.png">
+           </span><!-- /.END icon-top -->
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
 
          <section id="section-service" class="col-lg-12 col-sm-12 col-xs-12 text-center full-width">
           <div class="container">
              <h1 class="title-section">Nossos serviços</h1>   
              <div class="page-section-white">
-           <div class="col-lg-4">
+          
 
-                         <div class="bg-image-service">
-                         <img class="" src="<?php bloginfo("template_url")?>/img/icon.png" alt="Generic placeholder image" >
-                         </div>
+             <?php 
 
-                          <h2><a href="">Heading</a></h2>
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                          <a class="btn btn-default leia-mais" role="button" href="#">leia mais</a>
-                   </div><!-- /.col-lg-4 -->
+               query_posts("showposts=3&category_name=nossos-servicos");
+               if ( have_posts() ) : while ( have_posts() ) : the_post();
+              
 
+              ?>
                    <div class="col-lg-4">
 
                           <div class="bg-image-service">
-                          <img class="" src="<?php bloginfo("template_url")?>/img/icon.png" alt="Generic placeholder image" >
+                          <?php the_post_thumbnail('icon-servico'); ?> 
                           </div>
 
 
-                          <h2><a href="">Heading</a></h2>
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                          <a class="btn btn-default leia-mais" role="button" href="#">leia mais</a>
+                          <h2><a href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
+                           <?php the_content()?>
+                          <a class="btn btn-default leia-mais" role="button" href="<?php the_Permalink()?>">leia mais</a>
                    </div><!-- /.col-lg-4 -->
 
-                   <div class="col-lg-4">
-                          <div class="bg-image-service">
-                          <img class="" src="<?php bloginfo("template_url")?>/img/icon.png" alt="Generic placeholder image" >
-                          </div>
+                  
+            <?php endwhile;else : ?>
+           <?php endif; ?>
 
-                          <h2><a href="">Heading</a></h2>
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                          <a class="btn btn-default leia-mais" role="button" href="#">leia mais</a>
-                   </div><!-- /.col-lg-4 -->
-  
           </div><!-- / page-section-white  -->
           </div> <!-- /.END section-service -->
 
          </section>  <!-- /.END section-service -->
+
+         <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+           <span class="icon-bottom">
+            <img src="<?php bloginfo("template_url")?>/img/icon-bottom-section-servico.png">
+           </span><!-- /.END icon-top -->
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
 
 
         <section id="recent-publications" class="col-lg-12 col-sm-12 col-xs-12 text-center">
@@ -631,74 +718,41 @@
              <h1 class="title-section">Publicações recentes</h1>   
 
                
-                <div id="thumbcarousel" class="carousel " data-interval="false">
-                <div class="carousel-inner">
-                <div class="item active">
+              
 
-                <div data-target="#carousel" data-slide-to="0" class="">
-                    <div class="col-lg-4">
-                      <img class="" src="<?php bloginfo("template_url")?>/img/img-p.gif" alt="Generic placeholder image">
-                       <div class="date triangular-icon">
-                          <div class="day">03</div>
-                          <div class="months">jan</div>
-                        </div>
-                      <h2 ><a class="title-article" href="">titulo</a></h2>
-                      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                      <a href="#" role="button" class="btn btn-default leia-mais">leia mais</a>
-                    </div><!-- /.col-lg-4 -->
+
           
-                </div><!-- /item -->
 
-                <div class="item">
-                   <div data-target="#carousel" data-slide-to="1" class="">
-                        <div class="col-lg-4">
-                          <img class="" src="<?php bloginfo("template_url")?>/img/img-p.gif">
-                           <div class="date triangular-icon">
-                            <div class="day">03</div>
-                            <div class="months">jan</div>
-                           </div>
-                          <h2 ><a class="title-article" href="">titulo</a></h2>
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                         <a href="#" role="button" class="btn btn-default leia-mais">leia mais</a>
-                        </div><!-- /.col-lg-4 -->
-                     </div>
-
-            
-                     <div data-target="#carousel" data-slide-to="2" class="">
-                        <div class="col-lg-4">
-                          <img class="" src="<?php bloginfo("template_url")?>/img/img-p.gif">
-                           <div class="date triangular-icon">
-                            <div class="day">03</div>
-                            <div class="months">jan</div>
-                           </div>
-                           <h2 ><a class="title-article" href="">titulo</a></h2>
-                          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                          <a href="#" role="button" class="btn btn-default leia-mais">leia mais</a>
-                        </div><!-- /.col-lg-4 -->
-                     </div>
-                     
-                </div><!-- /item -->
-
-            </div><!-- /carousel-inner -->
-
-           
-
-          </div> <!-- /thumbcarousel -->
-
-           <a class="left carousel-control" href="#recent-publications" role="button" data-slide="prev">
-                <span class=" glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#recent-publications" role="button" data-slide="next">
-                <span class=" glyphicon-chevron-right"></span>
-            </a>
           </div>
 
         </section>  <!-- /.END recent-publications -->
 
+         <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+           <span class="icon-top">
+            <img src="<?php bloginfo("template_url")?>/img/comment.png">
+           </span><!-- /.END icon-top -->
+         </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
 
          <section id="contact" class="col-lg-12 col-sm-12 col-xs-12 text-center full-width">
+          
              <h1 class="title-section">Entre em contato</h1>      
              <p class="sub-title-section">se você precisar de um orçamento sobre um produto ou serviço não hesite em nos contactar</p> 
+            <div class="container">
+              <div class="col-lg-6">
+               <?php 
+
+                     query_posts("showposts=1&category_name=contato");
+                     if ( have_posts() ) : while ( have_posts() ) : the_post();
+                     the_content();
+                     
+                ?>
+
+
+                <?php endwhile;else : ?>
+               <?php endif; ?>
+              </div> <!-- /.END container -->
+            </div> <!-- /.END container -->
+           
          </section>  <!-- /.END contact -->
 
 
