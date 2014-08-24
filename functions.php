@@ -10,6 +10,9 @@ add_image_size( 'bio', 483,483);
 add_image_size( 'icon-servico', 43,41); 
 add_image_size( 'recent-publications', 324,157); 
 add_image_size( 'promocao', 398,303); 
+add_image_size( 'team', 186,186); 
+
+add_image_size( 'recente', 248,188); 
 
 
 
@@ -55,7 +58,13 @@ wp_enqueue_script('jquery');
  wp_register_script('tab', get_bloginfo('template_url').'/js/tab.js');
  wp_enqueue_script('tab');
 
+  //====================== products
+ wp_register_script('productsjs', get_bloginfo('template_url').'/js/products.js');
+ wp_enqueue_script('productsjs');
 
+   //======================  carouselow.js
+ wp_register_script('carouselow', get_bloginfo('template_url').'/js/carouselow.js');
+ wp_enqueue_script('carouselow');
 
 
 /* Desenvolvido por Michel Damasceno */

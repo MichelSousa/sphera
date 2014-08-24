@@ -191,7 +191,7 @@
                      ?>
 
                      <div class="crsl-item">
-                            <?php the_post_thumbnail('team', array('class' => 'img-circle zoom')); ?> 
+                            <?php the_post_thumbnail('team', array('class' => 'img-circle')); ?> 
                          <h2><a href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
                        
                         <p> <?php echo excerpt("20")?></p>
@@ -281,8 +281,47 @@
 
                         <div class="tab-pane active" id="iluminacao">
 
-                           
-                                <?php
+                            <div id="nav-03" class="crsl-nav">
+                                <a href="#" class="previous">« Previous</a>
+                                <a href="#" class="next">Next »</a>
+                            </div>
+
+                            <div style="" class="gallery gallery-02 crsl-items" data-navigation="nav-03">
+
+                                <div class="crsl-wrap">
+
+                                   </script>
+
+                                <script type="text/javascript">
+
+                                    $(document).ready(function(){
+
+                                        $(".item-aba span").click(function(){
+
+                                              var id = $(this).attr("class");
+
+                                        if (!$(this).hasClass('ativo')) {
+
+                                             $(".item-aba span").removeClass('ativo'); 
+                                                }
+                                                
+                                              $('.'+id).addClass('ativo');
+
+                                            
+
+                                        })
+
+
+
+                                    })
+                                  </script>
+
+
+                                  <style type="text/css">
+                                      .ativo{background: #000;color:#fff;display: block !important;}
+                                   </style>
+
+                                  <?php
 
                                  $category_id_products = get_category_by_slug( 'iluminacao');
                             
@@ -296,82 +335,130 @@
                                     'exclude'  => '',
                                     );
 
-                                   $categories_products_iluminacao = get_categories($args);
-                                   ?>
-                                 <span class="item-aba">
+                                   $categories_products = get_categories($args);
 
-                                   <div id="owl0" class="owl-carousel">
-                                    <?php
-                                   foreach ($categories_products_iluminacao  as $value)  { ?>
+                                   foreach ($categories_products as $value) { ?>
                                     
-                                        <div> 
-                                          <span class="<?php echo $value->slug?>">
-                                               <?php echo $value->name?>
-                                          </span>
-                                        </div>
+                                  
+                                  <span class="item-aba">
+                                  <div class="crsl-item">
+                                     <span class="<?php echo $value->slug?>">
+                                       <?php echo $value->name?>
+                                     </span>
+                                  </div>
+                                  </span>
+
+                                  
 
                                     <?php   
 
                                        }
 
                                     ?>
-
-                                     </div>
-                                  </span>
                                
 
+                                </div>   <!--  gallery -->
 
-                                <?php foreach ($categories_products_iluminacao as $row) { ?>
+                               </div>   <!-- crsl-wrap -->
 
-                               <span class="item-aba post-products" >
+                                <?php foreach ($categories_products as $row) { ?>
 
-                                  <span  style="display:none;"  class="<?php echo $row->slug?>">
-                                     
-                                    
+                               <div class="item-aba" style="clear:both">
+
+                                  <span  style="display:none;clear:both;border:1px solid #000"  class="<?php echo $row->slug?>">
+                                     <div class="gallery gallery-04 crsl-items" data-navigation="nav-04">
+
+                                          <div class="crsl-wrap ">
 
 
                                       <?php 
+                                       query_posts("showposts=10&category_name=.'".$row->slug."'");
+                                       if ( have_posts() ) : while ( have_posts() ) : the_post();
+                                       ?>
 
-                                        $count_post = count(query_posts("showposts=10&category_name=.'".$row->slug."'"));
+                                            <div class="crsl-item">
+                                               <?php the_post_thumbnail('recente'); ?> 
+                                                <div class="top-box">
+                                                  <h2 class="title-article"><a href="#"><?php the_title()?></a></h2>
+                                                  <h3 class="sub-title-article"><?php echo excerpt("10")?></h3>
+                                                </div>   <!-- top-box --> 
+                                            </div> <!-- crsl-item --> 
+                                          <?php endwhile;else : ?>
+                                         <?php endif; ?>
+                                          </div>  <!-- crsl-wrap  --> 
+                                     </div>  <!-- gallery -->    
 
-                                          if( $count_post <= 0)
-                                          {
-                                            echo "<h3 class='alert alert-info'>Você está em ".$row->slug.", Essa categoria não possui nenhum post.</h3>";
-                                          
-                                          }else{?>
-                                         
-                                              <div id="owl4" class="owl-carousel">
-                                                <?php 
-                                                 query_posts("showposts=10&category_name=.'".$row->slug."'");
-                                                 if ( have_posts() ) : while ( have_posts() ) : the_post();
-                                               ?>
-
-                                                  <div>  
-                                                    <?php the_post_thumbnail('recente'); ?>
-                                                     <div class="top-box">
-                                                      <h2 class="title-article"><a href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
-                                                      <h3 class="sub-title-article"><?php echo excerpt("3")?></h3>
-                                                    </div>  <!-- top-box-->    
-                                                  </div><!-- item -->    
-                                                <?php  endwhile;else : ?>
-                                                <?php endif; ?>
-                                         
-  
-                                              </div>
-
-                                          <?php } ?>
                                   </span>
-                                  </span>
+                                  </div>
 
-                                      <?php  
-                                         
+                                      <?php   
 
                                        }
 
                                     ?>
                                
                                 
-                                     <a class="btn-sphera" href="">SITE DESSE PARCEIRO</a>
+
+
+                                <div style="" class="gallery gallery-04 crsl-items" data-navigation="nav-04">
+
+                                          <div class="crsl-wrap ">
+
+                                            <div class="crsl-item">
+                                             <img src="<?php bloginfo("template_url")?>/img/img-products.gif" alt="" /></li>
+                                                <div class="top-box">
+                                                  <h2 class="title-article">titulo</h2>
+                                                  <h3 class="sub-title-article">subtitulo</h3>
+                                                </div>   <!-- top-box --> 
+                                            </div>
+
+                                            <div class="crsl-item">
+                                             <img src="<?php bloginfo("template_url")?>/img/img-products.gif" alt="" /></li>
+                                                <div class="top-box">
+                                                  <h2 class="title-article">titulo</h2>
+                                                  <h3 class="sub-title-article">subtitulo</h3>
+                                                </div>   <!-- top-box --> 
+                                            </div>
+
+                                            <div class="crsl-item">
+                                             <img src="<?php bloginfo("template_url")?>/img/img-products.gif" alt="" /></li>
+                                                <div class="top-box">
+                                                  <h2 class="title-article">titulo</h2>
+                                                  <h3 class="sub-title-article">subtitulo</h3>
+                                                </div>   <!-- top-box --> 
+                                            </div>
+
+                                            <div class="crsl-item">
+                                             <img src="<?php bloginfo("template_url")?>/img/img-products.gif" alt="" /></li>
+                                                <div class="top-box">
+                                                  <h2 class="title-article">titulo</h2>
+                                                  <h3 class="sub-title-article">subtitulo</h3>
+                                                </div>   <!-- top-box --> 
+                                            </div>
+
+                                            <div class="crsl-item">
+                                             <img src="<?php bloginfo("template_url")?>/img/img-products.gif" alt="" /></li>
+                                                <div class="top-box">
+                                                  <h2 class="title-article">titulo</h2>
+                                                  <h3 class="sub-title-article">subtitulo</h3>
+                                                </div>   <!-- top-box --> 
+                                            </div>
+
+                                            <div class="crsl-item">
+                                             <img src="<?php bloginfo("template_url")?>/img/img-products.gif" alt="" /></li>
+                                                <div class="top-box">
+                                                  <h2 class="title-article">titulo</h2>
+                                                  <h3 class="sub-title-article">subtitulo</h3>
+                                                </div>   <!-- top-box --> 
+                                            </div>
+
+                                           
+
+                                          </div> <!-- END iluminacao -->
+
+                                          </div> <!-- END iluminacao -->
+
+                                    <a class="btn-sphera" href="">SITE DESSE PARCEIRO</a>
 
 
                
@@ -381,93 +468,8 @@
 
                         <div class="tab-pane" id="estofados">
 
-                         
+                          ESTOFADOS
 
-
-                                    <?php
-
-                                 $category_id_products = get_category_by_slug( 'estofados');
-                            
-                           
-        
-                                  $args = array(
-                                    'orderby' => 'name',
-                                    'order' => 'DESC',
-                                    'child_of'=>  $category_id_products->term_id,
-                                    'hide_empty'=> 0,
-                                    'exclude'  => '',
-                                    );
-
-                                   $categories_products_estofados = get_categories($args);
-
-                                  ?>
-
-                                   <span class="item-aba">
-
-                                   <div id="owl6" class="owl-carousel">
-                                    
-                                 <?php 
-                                 
-                                   foreach ($categories_products_estofados  as $value)  { ?>
-                                    
-                                        <div> 
-                                          <span class="<?php echo $value->slug?>">
-                                               <?php echo $value->name?>
-                                          </span>
-                                        </div>
-                                    <?php } ?>
-                                     </span>
-                                   </div>
-
-                                    <?php 
-
-                                      foreach ($categories_products_estofados  as $row)  { 
-
-                                        $count_post_estofados= count(query_posts("showposts=10&category_name=.'".$row->slug."'"));
-
-                                        ?>
-
-                                        <span class="item-aba post-products" >
-
-                                          <span  style="display:none;"  class="<?php echo $row->slug?>">
-                                    <?php
-
-                                          if( $count_post_estofados <= 0)
-                                          {
-                                            echo "<h3 class='alert alert-info'>Você está em ".$row->slug.", Essa categoria não possui nenhum post.</h3>";
-                                          
-                                          }else{?>
-
-                                            <div id="owl7" class="owl-carousel">
-                                                <?php 
-                                                 query_posts("showposts=10&category_name=.'".$row->slug."'");
-                                                 if ( have_posts() ) : while ( have_posts() ) : the_post();
-                                               ?>
-
-                                                  <div>  
-                                                    <?php the_post_thumbnail('recente'); ?>
-                                                     <div class="top-box">
-                                                      <h2 class="title-article"><a href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
-                                                      <h3 class="sub-title-article"><?php echo excerpt("3")?></h3>
-                                                    </div>  <!-- top-box-->    
-                                                  </div><!-- item -->    
-                                                <?php  endwhile;else : ?>
-                                                <?php endif; ?>
-
-                                         
-  
-                                              </div>
-
-                                              <?php } ?>
-                                    </span>
-                                  </span>
-                                <?php   
-
-                                       }
-
-                                    ?>
-
-                             
                         </div><!-- END estofados -->
                         
 
@@ -600,7 +602,12 @@
 
                       </ul>      
 
-                    
+                      <style type="text/css">
+                          #section-recents .crsl-item
+                          {
+
+                          }
+                      </style>
 
                           <div class="tab-content">
 
@@ -792,6 +799,3 @@
 
       <?php get_footer()?>
 
-
-
-    

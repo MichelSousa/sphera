@@ -1,3 +1,7 @@
+
+  
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,12 +25,30 @@
 
     <link href="<?php bloginfo("template_url")?>/style.css" rel="stylesheet">
 
-    <?php wp_head()?>
+    <link rel="stylesheet" href="<?php bloginfo("template_url")?>/css/owl.carousel.css">
+ 
+    <!-- Default Theme -->
+    <link rel="stylesheet" href="<?php bloginfo("template_url")?>/css/owl.theme.css">
+ 
+    <!-- jQuery 1.7+ -->
+
+    <script type="text/javascript" src="<?php bloginfo("template_url")?>/js/jquery-1.9.1.min.js"></script>
+    <!-- Include js plugin -->
+    <script src="<?php bloginfo("template_url")?>/js/owl.carousel.js"></script>
+
+    <script type="text/javascript">
+
+    
+</script>
+
+
 
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
+
+  
   
       <div class="container">
 
@@ -75,3 +97,92 @@
 
    
 
+               
+                 <script type="text/javascript" src="<?php bloginfo("template_url")?>/js/responsiveCarousel.js"></script>
+                 
+                 <script type="text/javascript">
+
+
+                        jQuery(document).ready(function($){
+                              
+
+                          $("#section-stats .col-lg-4 h1").eq(1).attr("class","title-center")
+
+                          $('.gallery-03').carousel({ 
+                           visible:2, itemMinWidth: 260, 
+                          itemMargin: 250});
+
+                          $('.gallery-01').carousel({ visible: 3, 
+                          itemMargin: 10, 
+                           });
+
+                          $('.gallery-02').carousel({ visible:6, 
+                          itemMargin: 10,  itemMinWidth: 151, 
+                           });
+
+                            $('.gallery-04').carousel({ visible:4, 
+                          itemMargin: 10,  itemMinWidth: 246, 
+                           });
+
+                             $('.gallery-05').carousel({ visible:4, 
+                          itemMargin: 20,  itemMinWidth: 226, 
+                           });
+
+
+                             $('.gallery-06').carousel({ visible:3, 
+                          itemMargin: 20,  itemMinWidth: 226, 
+                           });
+
+                               
+
+
+                                 $('.gallery-8').carousel({ visible:6, 
+                          itemMargin: 20,  itemMinWidth: 226, 
+                           });
+
+                                   $('.gallery-9').carousel({ visible:6, 
+                          itemMargin: 20,  itemMinWidth: 226, 
+                           });
+
+                                    $('.gallery-10').carousel({ visible:6, 
+                          itemMargin: 20,  itemMinWidth: 226, 
+                           });
+
+
+                                    $('.gallery-11').carousel({ visible:6, 
+                          itemMargin: 20,  itemMinWidth: 226, 
+                           });
+
+                                    $('.gallery-12').carousel({ visible:6, 
+                          itemMargin: 20,  itemMinWidth: 226, 
+                           });
+
+
+                           
+
+                           });
+
+                         
+                          
+                      
+                    </script>
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+$(".voltarTopo").hide();
+$(function () {
+$(window).scroll(function () {
+if ($(this).scrollTop() > 300) {
+$('.voltarTopo').fadeIn();
+} else {
+$('.voltarTopo').fadeOut();
+}
+});
+$('.voltarTopo').click(function() {
+$('body,html').animate({scrollTop:0},600);
+});
+    });});
+
+</script>

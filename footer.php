@@ -22,7 +22,7 @@
   			
            
             	
-               <img style="" class="hidden-sm hidden-xs text-right top" src="<?php bloginfo("template_url")?>/img/top.png">
+               <img  onclick="$j('html,body').animate({scrollTop: $j('#voltarTopo').offset().top}, 2000);" style="" class="voltarTopo hidden-sm hidden-xs text-right top" src="<?php bloginfo("template_url")?>/img/top.png">
                
          
             

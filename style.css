@@ -22,6 +22,18 @@ vertical-align:baseline;
     top: 47px;
     z-index: 1;
 }
+.icon-top img:hover ,.icon-bottom img:hover
+
+{
+    transform: scale(1.1);
+    transition: all 0.5s ease 0s;
+}
+
+.zoom:hover
+{
+    transform: scale(1.1);
+    transition: all 0.5s ease 0s;
+}
 
 .icon-bottom
 {
@@ -82,6 +94,11 @@ h2
   text-transform: uppercase;
 }
 
+#slide-posts
+{
+  max-width: 1400px;
+  text-align: center;
+}
 
 #slide-posts  .carousel-inner > .item > img ,
 #slide-posts  .carousel,
@@ -106,7 +123,7 @@ h2
   -webkit-border-radius: 8px ;
   border-radius: 8px ;
   border:12px solid #8A57A4;
-  margin: 52px 0px 69px 0px;
+  margin: 52px 25% 69px 25%;
   max-width:566px;height:380px
 }
 
@@ -118,6 +135,11 @@ h2
 {
   font-size:15px !important;
   margin-bottom: 82px !important;
+}
+
+.title-center
+{
+  color: #fff !important;
 }
 
 
@@ -245,7 +267,7 @@ h2
 #section-team .carousel-control .glyphicon-chevron-left, 
 #section-team .carousel-control .glyphicon-chevron-right
 {
-     top: 13%;
+     top: 37%;
 }
 
 /* CSS used here will be applied after bootstrap.css */
@@ -287,7 +309,7 @@ h2
 
  
 
-#section-team .col-lg-4 
+#section-team .crsl-item 
 {
     margin-top: 32px;
 }
@@ -604,6 +626,7 @@ h2
   font-size: 26px;
   cursor: pointer;
   background-color: #fff;
+  margin-top: 26px;
 }
 
 .btn-sphera:hover
@@ -612,6 +635,7 @@ h2
   border: 2px solid #000;
   color: #000;
 }
+
 
 /*================================ #section-promotions*/
 
@@ -625,8 +649,22 @@ h2
 #section-promotions .carousel-control .glyphicon-chevron-left, 
 #section-promotions .carousel-control .glyphicon-chevron-right
 {
-     top: 43% !important;
+     margin-top: 68% !important;
+     position: absolute;
 }
+
+#section-promotions  .carousel-control .glyphicon-chevron-right, 
+#section-promotions  .carousel-control .icon-next
+{
+  margin-right:-205px;
+}
+
+#section-promotions  .carousel-control .glyphicon-chevron-left,
+#section-promotions  .carousel-control .icon-prev
+{
+ margin-left:-236px; 
+}
+
 
 .bg-image
 {
@@ -651,9 +689,21 @@ h2
 
 /*================================ #section-recents*/
 
+.owl-carousel
+{
+  margin-top: 30px;
+}
+
 #section-recents
 {
   padding-bottom:91px; 
+  position: relative;
+}
+
+
+#section-recents .crsl-item
+{
+  margin-top: 34px;
 }
 
 #thumbcarousel-recentes
@@ -661,12 +711,37 @@ h2
   margin-top: 30px
 }
 
+
+#prev ,#next
+{
+  cursor: pointer;
+  position: relative;
+  top: -210px;
+}
+
+#next
+{
+  float: right;
+  left: 120px
+}
+
+.owl-controls
+{display: none !important;}
+
+#prev
+{
+  float: left;
+  right: 120px
+
+}
+
 #section-recents .carousel-control .icon-prev, 
-#section-recents.carousel-control .icon-next,
+#section-recents .carousel-control .icon-next,
 #section-recents .carousel-control .glyphicon-chevron-left, 
 #section-recents .carousel-control .glyphicon-chevron-right
 {
-     top: 25%;
+     margin-top: 55%;
+     position: absolute;
 }
 
 #section-recents .carousel-control .glyphicon-chevron-right, 
@@ -678,7 +753,7 @@ h2
 #section-recents .carousel-control .glyphicon-chevron-left,
 #section-recents .carousel-control .icon-prev
 {
- margin-left:-466px; 
+ margin-left:-220px; 
 }
 
 #section-recents  .carousel .item
@@ -690,7 +765,6 @@ h2
 {
   background: url("img/bg-servicos.png") no-repeat center;
   height: 149px;
-  max-width: 129px;
   padding: 10px;
   text-align: center;
   padding-top: 50px
@@ -702,6 +776,7 @@ h2
 {
   padding-bottom:91px; 
 }
+
 
 #recent-publications .leia-mais
 {
@@ -733,6 +808,10 @@ h2
   overflow: hidden;
 }
 
+#owl0,#owl6
+{
+  margin-bottom: 30px;
+}
 
 .leia-mais 
 {
@@ -758,7 +837,7 @@ h2
 #recent-publications  .carousel-control .glyphicon-chevron-left, 
 #recent-publications .carousel-control .glyphicon-chevron-right
 {
-     top: 31%;
+     top: 11%;
 }
 
 #recent-publications .carousel-control .glyphicon-chevron-right, 
@@ -779,6 +858,18 @@ h2
   text-align: left;
 }
 
+.item-aba .gallery 
+{
+  margin-top: 30px !important;
+}
+
+.item-aba .alert-info
+{
+  margin: 30px 0px 30px 0px;
+}
+
+ .ativo{display: block !important;}
+
 #recent-publications  .col-lg-4
 {
   margin-top: 100px
@@ -790,7 +881,7 @@ h2
   width: 47px;
   background: #8B57A5;
   text-align: center;
-
+   margin: 0 43.2%;
 }
 
 .months,
