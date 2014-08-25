@@ -41,7 +41,7 @@
     
 </script>
 
-
+ <?php wp_head()?>
 
   </head>
 <!-- NAVBAR

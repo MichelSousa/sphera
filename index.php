@@ -165,48 +165,51 @@
 
             <h1 class="title-section">NOSSA EQUIPE</h1>
 
-                        <div id="nav-01" class="crsl-nav">
-                           <a class="left carousel-control" href="#" >
-                             <span class=" glyphicon-chevron-left previous"></span>
-                         </a>
-
-                         <a class="right carousel-control next" href="#">
-                             <span class=" glyphicon-chevron-right"></span>
-                         </a>
-                        </div>
-
-                       
-                          
-
-
-
-                  <div style="" class="gallery gallery-01 crsl-items" data-navigation="nav-01">
-
-                    <div class="crsl-wrap ">
-
-                   
+              <div id="owl10" class="owl-carousel">
+                        
+                     
                     <?php 
-                     query_posts("showposts=200&category_name=equipe");
-                     if ( have_posts() ) : while ( have_posts() ) : the_post();
-                     ?>
 
-                     <div class="crsl-item">
-                            <?php the_post_thumbnail('team', array('class' => 'img-circle zoom')); ?> 
+                      $count_post_team = count(query_posts("showposts=200&category_name=equipe")); 
+                      query_posts("showposts=".$count_post_team."&category_name=equipe");
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+                    ?>
+
+
+                        <div>
+                         <?php the_post_thumbnail('team', array('class' => 'img-circle zoom')); ?> 
                          <h2><a href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
                        
                         <p> <?php echo excerpt("20")?></p>
-                       
-                     </div><!-- /.crsl-item -->
+                        </div>
+
+
+                    
+                      
+                   
 
                        <?php endwhile;else : ?>
                     <?php endif; ?>
                  
                     </div>
 
+                    <?php if($count_post_team > 3 ){?>
+
+                    <span id="prev" class="prev  hidden-sm hidden-xs ">
+                        <img src="<?php bloginfo("template_url")?>/img/left.png" alt="" />
+                    </span>
+
+                    <span id="next" class="next  hidden-sm hidden-xs  "> 
+                         <img src="<?php bloginfo("template_url")?>/img/right.png" alt="" />
+                    </span>
+
+                    <?php } ?>
+
+
                     </div>
 
-                  
-
+                
         
 
          </section> <!-- /.END section-clients --> 
@@ -261,7 +264,9 @@
              <h1 class="title-section">Produtos</h1>   
 
               <div class="container">
-                       <p class="sub-title-section">DE ILUMINAÇÃO RESIDENCIAL, COMERCIAL À INDUSTRIAL. CONHEÇA NOSSOS PARCEIROS.</p>    
+                       <p class="sub-title-section">
+                           DE ILUMINAÇÃO RESIDENCIAL, COMERCIAL À INDUSTRIAL. CONHEÇA NOSSOS PARCEIROS.
+                       </p>    
                        <!-- Nav tabs -->
 
                      <div class="col-lg-12">
@@ -349,7 +354,11 @@
                                                   <div>  
                                                     <?php the_post_thumbnail('recente'); ?>
                                                      <div class="top-box">
-                                                      <h2 class="title-article"><a href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
+                                                      <h2 class="title-article">
+                                                          <a href="<?php the_Permalink()?>">
+                                                             <?php the_title()?>
+                                                          </a>
+                                                      </h2>
                                                       <h3 class="sub-title-article"><?php echo excerpt("3")?></h3>
                                                     </div>  <!-- top-box-->    
                                                   </div><!-- item -->    
@@ -490,46 +499,44 @@
 
              <h1 class="title-section">Promoções</h1>  
 
-                  <div  class="carousel">
+                 
+                 <div id="owl9" class="owl-carousel">
+              
 
-                             <div id="nav-03" class="crsl-nav">
+                        <?php 
 
-                               <a style="" class="left carousel-control previous" href="#">
-                                  <span class=" glyphicon-chevron-left"></span>
-                                </a>
-
-                             <a class="right carousel-control next" href="#">
-                                    <span class=" glyphicon-chevron-right"></span>
-                              </a>
-
-
-                          </div><!-- /nav-03 -->
-
-                           </div><!-- /carousel -->
-            
-
-               <div style="" class="gallery gallery-03 crsl-items" data-navigation="nav-03">
-
-                          <div class="crsl-wrap ">
-
-                                      <?php 
-                           query_posts("showposts=3&category_name=promocao");
+                          $count_post_promotions = count(query_posts("category_name=promocao")); 
+                           query_posts("showposts=".$count_post_promotions."&category_name=promocao");
                            if ( have_posts() ) : while ( have_posts() ) : the_post();
                            ?>
-                                
-                                  <figure style="" class="crsl-item">
+
+                     
+                              <div>  
+                                <figure>
 
                                    <div class="bg-image">
-                                      <?php the_post_thumbnail('promocao'); ?>
+                                      <?php the_post_thumbnail('promocao',array('class' => 'img-responsive')); ?>
                                    </div><!-- END bg-image --> 
-                        
-                                  </figure>
+                                </figure> 
+                                  <p><?php echo excerpt("10")?></p>
+                                 
+                              </div>
+                                
+                                 
 
                                <?php endwhile;else : ?>
 
                                 <?php endif; ?>
 
                             </div><!-- /gallery-02 -->
+                          <?php if($count_post_promotions > 2){?>
+                            <span id="prev" class="prev  hidden-sm hidden-xs ">
+                                <img src="<?php bloginfo("template_url")?>/img/left.png" alt="" />
+                            </span>
+                            <span id="next" class="next  hidden-sm hidden-xs  "> 
+                                 <img src="<?php bloginfo("template_url")?>/img/right.png" alt="" />
+                            </span>
+                          <?php } ?>  
 
                             </div><!-- /crsl-wrap -->   
 
@@ -641,8 +648,8 @@
                               
                                 </div>
 
-                                         <span id="prev" class="prev"> <img src="<?php bloginfo("template_url")?>/img/left.png" alt="" /></span>
-                                         <span id="next" class="next"> <img src="<?php bloginfo("template_url")?>/img/right.png" alt="" /></span>
+                                         <span id="prev" class="prev  hidden-sm hidden-xs"> <img src="<?php bloginfo("template_url")?>/img/left.png" alt="" /></span>
+                                         <span id="next" class="next  hidden-sm hidden-xs"> <img src="<?php bloginfo("template_url")?>/img/right.png" alt="" /></span>
 
                                 </div>   
 
@@ -713,46 +720,54 @@
           <div class="container">
              <h1 class="title-section">Publicações recentes</h1>   
 
-                 <div class="container carousel">
+                 <div class="container">
 
-                    <div id="nav-06" class="crsl-nav">
-                         <a style="" class="left carousel-control previous" href="#" >
-                          <span class=" glyphicon-chevron-left"></span>
-                        </a>
-
-                       <a class="right carousel-control next" href="#">
-                              <span class=" glyphicon-chevron-right"></span>
-                        </a>
-
-                   </div><!-- /.nav-05 -->
-              
+                   <div id="owl12" class="owl-carousel">
+                    
 
 
-          <div style="" class="gallery gallery-06 crsl-items" data-navigation="nav-06">
+                    <?php 
 
-              <div class="crsl-wrap ">
-               <?php 
-                    query_posts("showposts=20&category_name=publicacoes-recentes");
-                   if ( have_posts() ) : while ( have_posts() ) : the_post();
-                ?>
-                <div class="crsl-item">
-                     <?php the_post_thumbnail('recent-publications'); ?> 
-                    <div class="date triangular-icon">
-                    <div class="day"><?php the_time("d")?></div>
-                    <div class="months"><?php the_time("M")?></div>
+                     $count_post_publications = count(query_posts("category_name=publicacoes-recentes")); 
+
+                      query_posts("showposts=".$count_post_publications."&category_name=publicacoes-recentes");
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+                     ?>
+
+                    <div> 
+                       <?php the_post_thumbnail('recent-publications'); ?> 
+                        <div class="date triangular-icon">
+                        <div class="day"><?php the_time("d")?></div>
+                        <div class="months"><?php the_time("M")?></div>
+                        </div>
+                        <h2 ><a class="title-article" href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
+                        <p><?php echo excerpt("30")?></p>
+                        <a href="<?php the_Permalink()?>" role="button" class="btn btn-default leia-mais">leia mais</a>
                     </div>
-                    <h2 ><a class="title-article" href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
-                    <p><?php echo excerpt("30")?></p>
-                    <a href="<?php the_Permalink()?>" role="button" class="btn btn-default leia-mais">leia mais</a>
-                </div>
+
+               
+                    
+              
 
                   <?php endwhile;else : ?>
                  <?php endif; ?>
 
+                  
+            
 
               </div>
 
-           </div>
+                 <?php if($count_post_publications > 3){?>
+
+                    <span id="prev" class="prev  hidden-sm hidden-xs ">
+                        <img src="<?php bloginfo("template_url")?>/img/left.png" alt="" />
+                    </span>
+                    <span id="next" class="next  hidden-sm hidden-xs  "> 
+                         <img src="<?php bloginfo("template_url")?>/img/right.png" alt="" />
+                    </span>
+
+                    <?php } ?>
 
           </div>
 
@@ -764,6 +779,7 @@
            </span><!-- /.END icon-top -->
          </div><!-- /.END col-lg-12 col-sm-12 col-xs-12 text-center -->
 
+        
          <section id="contact" class="col-lg-12 col-sm-12 col-xs-12 text-center full-width">
           
              <h1 class="title-section">Entre em contato</h1>      
