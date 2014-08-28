@@ -36,9 +36,14 @@
     <!-- Include js plugin -->
     <script src="<?php bloginfo("template_url")?>/js/owl.carousel.js"></script>
 
-    <script type="text/javascript">
+    <link rel="stylesheet" href="<?php bloginfo("template_url")?>/css/odometer-theme-car.css" />
 
-    
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+<script>
+window.odometerOptions = {
+  format: '(ddd).dd'
+};
 </script>
 
  <?php wp_head()?>
@@ -49,7 +54,26 @@
   <body>
 
   
+
+<script>
+
+$(document).ready(function(){
+  var number1 = $(".number1").attr("id");
+  var number2 = $(".number2").attr("id");
+  var number3 = $(".number3").attr("id");
+  setTimeout(function(){
+    $('.number1').html(number1);
+    $('.number4').html(number2);
+    $('.number3').html(number3);
+
+  }, 1000);
+
+})
+</script>
   
+
+
+
       <div class="container">
 
           <div class="logo">
@@ -58,7 +82,7 @@
         </a>
       </div>  <!--  end LOGO -->
 
-        <div class="navbar " role="navigation">
+        <div class="navbar  " role="navigation">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -106,7 +130,7 @@
                         jQuery(document).ready(function($){
                               
 
-                          $("#section-stats .col-lg-4 h1").eq(1).attr("class","title-center")
+                          $("#section-stats .col-lg-4 h1").eq(1).attr("class","title-center number4 odometer odometer-auto-theme ")
 
                           $('.gallery-03').carousel({ 
                            visible:2, itemMinWidth: 260, 

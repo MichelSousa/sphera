@@ -16,54 +16,49 @@
 
 <div class="container-page">
   
-  
-  
+
+     <?php  if ( have_posts() ) : while ( have_posts() ) : the_post();
+                           ?>
+
   <section class="posts-search">
+     
+        <?php the_post_thumbnail('search',array('class' => 'image-post transition')); ?>
 
-      <?php if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
+      <div class="bg-top ">
 
-         <div class="col-lg-4">
+       <?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url(); ?> 
 
-            <a href="<?php the_Permalink()?>">
+    
 
-              <img class="col-sx col-sm col-lg col-sx img-responsive " src="<?php bloginfo("template_url")?>/img/img-search.png">
-              
-            </a>
+          <a href="http://127.0.0.1/wordpress/heading-8/">Heading</a>
 
-         </div><!-- / col-lg-4  -->
+      
+         <div class="" style="border-top:1px solid #fff;
+         margin-top:20px;left:15px;max-width:1000px;position:relative;left:220px"> 
 
-         <div class="col-lg-8">
+        </div>
 
-         <div class="col-lg-1">
-            <img src="<?php bloginfo("template_url")?>/img/icon-search.png">
-         </div><!-- / col-lg-1  -->
+        
+        
+      </div>
 
-          <div class="col-lg-2">
-            <h2><a href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
+      <p>
+<span class="text-page">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna</span>
+</p>
 
-           
-         </div><!-- / col-lg-1  -->
+  </section>
+  
+<?php  endwhile;else : ?>
+       <?php endif; ?>
 
-          <div style="border-top:1px solid #fff;margin-top:20px;left:15px" class="col-lg-8">
+     <div class="paginator"  style="margin-bottom:80px;">
+      <?php wp_pagenavi() ?> 
+     </div>
 
-          </div>
-
-          </div>  <!-- / col-lg-8  -->
-           <p>
-              <?php the_content()?>  
-            </p>
-
-           <?php 
-          
-           endwhile;else :  ;
-           endif; 
-           
-          
-          ?>
-
-  </section><!-- / posts-search  -->
 
  	</div><!-- / container-page  -->
+
+
 
  <div class="bottom">
   	 <div class="col-lg-6"></div>

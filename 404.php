@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
     <div class="container-page-404">
-			  <div class="sidebar">
+			  <div class="sidebar hidden-sm hidden-xs hidden-md">
 				 <?php dynamic_sidebar( "sidebar404" ); ?> 
 			  </div><!-- / sidebar -->
 	   <div class="img0">
@@ -20,29 +20,29 @@
 		        
 				<h2>DIFERENCIAL</h2>
 			      <div class="bg">
-			 	   	 <a href=""><img src="<?php bloginfo("template_url")?>/img/1b.fw.png"/></a>
+			 	   	 <a href="<?php echo get_option("home")?>"><img src="<?php bloginfo("template_url")?>/img/1b.fw.png"/></a>
 				  </div>	
 		
 			   
 		 </div>	  
 			  
-		 <div class="col-lg-4">		 
+		 <div class="col-lg-4 text-center">		 
 		 		 
 				 <h2>PROMOÇÕES</h2>
 				
 			   <div class="bg">
-			 	   	 <a href=""><img src="<?php bloginfo("template_url")?>/img/c.fw.png"/></a>
+			 	   	 <a href="<?php echo get_option("home")?>"><img src="<?php bloginfo("template_url")?>/img/c.fw.png"/></a>
 			  </div>	
 					
 			  
 		 </div>
           
-          <div class="col-lg-4">		  
+          <div class="col-lg-4 text-center">		  
 				
 				<h2>PROJETOS RECENTES</h2>
 				
 				  <div class="bg">
-			 	   	 <a href=""><img src="<?php bloginfo("template_url")?>/img/d.fw.png"/></a>
+			 	   	 <a href="<?php echo get_option("home")?>"><img src="<?php bloginfo("template_url")?>/img/d.fw.png"/></a>
 				  </div>	
 		
 		</div>	 

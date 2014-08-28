@@ -124,6 +124,19 @@ $(document).ready(function() {
         })
 
 
+         var owlslide = $("#owlslide");
+     
+          owlslide.owlCarousel({items : 1 });
+
+           // Custom Navigation Events
+        $(".next").click(function(){
+        owlslide.trigger('owl.next');
+        })
+        $(".prev").click(function(){
+        owlslide.trigger('owl.prev');
+        })
+
+
        
      
     });

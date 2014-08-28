@@ -8,7 +8,7 @@
             	
             
              
- 			<div class="col-lg-7">	
+ 			     <div class="col-lg-7">	
                
                 <a href=""><img src="<?php bloginfo("template_url")?>/img/facebook.png"></a> 
               
@@ -18,7 +18,7 @@
                
                  <a href="" class="text-right"> <img src="<?php bloginfo("template_url")?>/img/twitter.png"></a> 
              
-  			</div>  
+  		    	</div>  
   			
            
             	
@@ -34,7 +34,7 @@
             
            <div class="container" style="max-width:750px;">
            	
-            <section class="menu ">
+            <section class="menu  hidden-sm hidden-xs">
             	
             	<div class="col-lg-8">
             	 <?php  
@@ -70,6 +70,7 @@
    			 </div><!-- /.col-lg-6 -->
    			 
             <section class="copyright text-">
+              
              <div class="container" style="max-width:300px;">	
              	
              <div class="col-lg-6">	

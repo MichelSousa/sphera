@@ -5,6 +5,7 @@
 
   <div class="container-page-header" style="">
     <?php $categories = get_categories('$post-ID'); ?>
+
      <span><?php the_title()?></span> <span>  
      <?php $cat = get_the_category( $post->ID );
            foreach($cat as $category) {?>
@@ -20,10 +21,26 @@
   
   <section class="posts">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post();  ?>
+      <?php $comments_count = wp_count_comments();?>
     <article class="col-lg-12">
-        <a href="<?php the_Permalink()?>"><img class="img-responsive " src="<?php bloginfo("template_url")?>/img/img-category.gif" alt="Generic placeholder image">
-       <h1><a title="<?php the_title()?>"  class="title-page" href=""><?php the_title()?></a></h1>
-        <span class="info"><?php the_time("M d")?>, <?php the_time("Y")?> Escrito por <?php the_author()?> - <a href="">Nenhum Comentário</a></span>
+       
+       <?php the_post_thumbnail('single', array('class' => 'col-sx col-sm col-lg col-sx img-responsive')); ?> 
+       <h1><?php the_title()?></h1>
+        <span class="info"><?php the_time("M d")?>, <?php the_time("Y")?> Escrito por <?php the_author()?> - 
+          <a href="">
+              <?php if($comments_count->total_comments <=0 ){
+                 echo "Nenhum comentário";
+               }
+               elseif($comments_count->total_comments == 1)
+                { 
+                  echo $comments_count->total_comments . " comentário";
+                }
+                else
+                {
+                   echo $comments_count->total_comments . " comentários";
+                }
+              ?>
+          </a></span>
          <span class="text-page">
 			<?php the_content()?>
          </span>
@@ -56,8 +73,24 @@
 
        <div class="col-lg-5">
         <div class="icon-social text-right">
-           <a href="" class="face"><img src="<?php bloginfo("template_url")?>/img/face-single.png"></a>
-           <a href="" class="twitter"><img src="<?php bloginfo("template_url")?>/img/twitter-single.png"></a>
+           <a href="" class="face">
+
+            <b:if cond='data:blog.pageType == "item"'>
+            <a href="<?php the_Permalink()?>"
+            onclick="
+            window.open(
+            'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+            'facebook-share-dialog',
+            'width=626,height=436');
+            return false;">
+              <img border="0" src="<?php bloginfo("template_url")?>/img/face-single.png"></img></a>
+              </b:if> 
+            
+           
+            
+             <a href="http://twitter.com/home?status=<?php the_title(); ?>+<?php the_permalink(); ?>" title="Share on Twitter" target="_blank">
+                 <img src="<?php bloginfo("template_url")?>/img/twitter-single.png">
+            </a>
         </div><!-- / shared  -->
 
           </div><!-- / col-lg-6  -->
@@ -65,6 +98,15 @@
      </div><!-- / shared  -->
 
   </div><!-- / col-lg-6  -->
+
+  <section class="comments col-lg-8">
+     
+    <?php wp_related_posts()?>
+  </section>
+
+    <section class="comments col-lg-8">
+      <?php comments_template(); ?>
+    </section>
 
  	</div><!-- / container-page  -->
 
@@ -75,3 +117,12 @@
   </div>
 
 <?php  get_footer() ?>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

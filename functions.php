@@ -11,8 +11,13 @@ add_image_size( 'icon-servico', 43,41);
 add_image_size( 'recent-publications', 324,157); 
 add_image_size( 'promocao', 398,303); 
 add_image_size( 'team', 186,186); 
+add_image_size( 'single', 695,333); 
+add_image_size( 'search', 369,282); 
+
 
 add_image_size( 'recente', 248,188); 
+
+add_image_size( 'slide', 690,277); 
 
 
 
@@ -65,6 +70,21 @@ wp_enqueue_script('jquery');
    //======================  carouselow.js
  wp_register_script('carouselow', get_bloginfo('template_url').'/js/carouselow.js');
  wp_enqueue_script('carouselow');
+
+
+   //======================  carouselow.js
+ wp_register_script('owl.carousel', get_bloginfo('template_url').'/js/owl.carousel.js');
+ wp_enqueue_script('owl.carousel');
+
+   //======================  animate
+ wp_register_script('animate', get_bloginfo('template_url').'/js/animate.js');
+ wp_enqueue_script('animate');
+
+
+   //======================  obmeter
+ wp_register_script('odometer', get_bloginfo('template_url').'/js/odometer.js');
+ wp_enqueue_script('odometer');
+
 
 
 /* Desenvolvido por Michel Damasceno */
