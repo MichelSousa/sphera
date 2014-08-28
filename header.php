@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Sphera</title>
+    <title><?php wp_title(); ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php bloginfo("template_url")?>/css/bootstrap.min.css" rel="stylesheet">
@@ -29,8 +29,6 @@
  
     <!-- Default Theme -->
     <link rel="stylesheet" href="<?php bloginfo("template_url")?>/css/owl.theme.css">
- 
-    <!-- jQuery 1.7+ -->
 
     <script type="text/javascript" src="<?php bloginfo("template_url")?>/js/jquery-1.9.1.min.js"></script>
     <!-- Include js plugin -->
@@ -46,6 +44,7 @@ window.odometerOptions = {
 };
 </script>
 
+
  <?php wp_head()?>
 
   </head>
@@ -54,25 +53,6 @@ window.odometerOptions = {
   <body>
 
   
-
-<script>
-
-$(document).ready(function(){
-  var number1 = $(".number1").attr("id");
-  var number2 = $(".number2").attr("id");
-  var number3 = $(".number3").attr("id");
-  setTimeout(function(){
-    $('.number1').html(number1);
-    $('.number4').html(number2);
-    $('.number3').html(number3);
-
-  }, 1000);
-
-})
-</script>
-  
-
-
 
       <div class="container">
 
@@ -122,7 +102,7 @@ $(document).ready(function(){
    
 
                
-                 <script type="text/javascript" src="<?php bloginfo("template_url")?>/js/responsiveCarousel.js"></script>
+                
                  
                  <script type="text/javascript">
 
@@ -132,56 +112,7 @@ $(document).ready(function(){
 
                           $("#section-stats .col-lg-4 h1").eq(1).attr("class","title-center number4 odometer odometer-auto-theme ")
 
-                          $('.gallery-03').carousel({ 
-                           visible:2, itemMinWidth: 260, 
-                          itemMargin: 250});
-
-                          $('.gallery-01').carousel({ visible: 3, 
-                          itemMargin: 10, 
-                           });
-
-                          $('.gallery-02').carousel({ visible:6, 
-                          itemMargin: 10,  itemMinWidth: 151, 
-                           });
-
-                            $('.gallery-04').carousel({ visible:4, 
-                          itemMargin: 10,  itemMinWidth: 246, 
-                           });
-
-                             $('.gallery-05').carousel({ visible:4, 
-                          itemMargin: 20,  itemMinWidth: 226, 
-                           });
-
-
-                             $('.gallery-06').carousel({ visible:3, 
-                          itemMargin: 20,  itemMinWidth: 226, 
-                           });
-
-                               
-
-
-                                 $('.gallery-8').carousel({ visible:6, 
-                          itemMargin: 20,  itemMinWidth: 226, 
-                           });
-
-                                   $('.gallery-9').carousel({ visible:6, 
-                          itemMargin: 20,  itemMinWidth: 226, 
-                           });
-
-                                    $('.gallery-10').carousel({ visible:6, 
-                          itemMargin: 20,  itemMinWidth: 226, 
-                           });
-
-
-                                    $('.gallery-11').carousel({ visible:6, 
-                          itemMargin: 20,  itemMinWidth: 226, 
-                           });
-
-                                    $('.gallery-12').carousel({ visible:6, 
-                          itemMargin: 20,  itemMinWidth: 226, 
-                           });
-
-
+                         
                            
 
                            });
@@ -191,22 +122,3 @@ $(document).ready(function(){
                       
                     </script>
 
-<script type="text/javascript">
-
-
-$(document).ready(function() {
-$(".voltarTopo").hide();
-$(function () {
-$(window).scroll(function () {
-if ($(this).scrollTop() > 300) {
-$('.voltarTopo').fadeIn();
-} else {
-$('.voltarTopo').fadeOut();
-}
-});
-$('.voltarTopo').click(function() {
-$('body,html').animate({scrollTop:0},600);
-});
-    });});
-
-</script>

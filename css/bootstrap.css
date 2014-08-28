@@ -3632,7 +3632,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   margin-bottom: -1px;
     margin-right: 33px;
-    font-size: 17px;
+    font-size: 14px;
 }
 .nav-tabs > li > a {
   margin-right: 2px;
@@ -3644,6 +3644,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     -moz-border-radius :8px;
      -webkit-border-radius :8px;
     border-radius :5px;
+      font-family: 'Oswald', sans-serif;
 
 }
 .nav-tabs > li > a:hover {

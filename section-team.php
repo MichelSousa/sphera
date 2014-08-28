@@ -26,7 +26,7 @@
 
 
                         <div>
-                         <?php the_post_thumbnail('team', array('class' => 'img-circle rotate')); ?> 
+                         <?php the_post_thumbnail('team', array('class' => 'img-circle opacity transition')); ?> 
                          <h2><a href="<?php the_Permalink()?>"><?php the_title()?></a></h2>
                        
                         <p> <?php echo excerpt("20")?></p>

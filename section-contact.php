@@ -14,7 +14,7 @@
 
                <h1 class="title-section">Entre em contato</h1> 
                <div class="border-bottom-title"></div>     
-               <p class="sub-title-section">se você precisar de um orçamento sobre um produto ou serviço não hesite em nos contactar</p> 
+               <p class="sub-title-section">se você precisar de um orçamento sobre um <span style="color:#8B57A5">produto ou serviço</span> não hesite em nos contactar</p> 
 
               <div class="col-lg-6">
                <?php 

@@ -87,6 +87,24 @@ wp_enqueue_script('jquery');
 
 
 
+//====================== ancora-deslizante
+ wp_register_script('ancora-deslizante', get_bloginfo('template_url').'/js/ancora-deslizante.js');
+ wp_enqueue_script('ancora-deslizante');
+
+
+//====================== number
+ wp_register_script('number', get_bloginfo('template_url').'/js/number.js');
+ wp_enqueue_script('number');
+
+
+
+
+//====================== top
+ wp_register_script('top', get_bloginfo('template_url').'/js/top.js');
+ wp_enqueue_script('top');
+
+
+
 /* Desenvolvido por Michel Damasceno */
 
 function gamesquare_customize_register( $wp_customize )
@@ -131,22 +149,6 @@ $wp_customize->add_control('welcome_text', array(
 )  );
 
 
-//===================== Endereço
-
-$wp_customize->add_section( 'sushiai_endereco' , array(
-     'title'     => __( 'Endereço', 'sushiai' ),
-      'description'   => 'Digite o seu endereço',
-) );
-
-$wp_customize->add_setting( 'text_endereco' , array(
-    'default'     => 'Rua Lucia Madalena Strapassoni, 154 | Sala 5, Quatro Barras',
-) );
-
-$wp_customize->add_control('sushiai_endereco_text', array(
-  'label'        => __( 'url', 'sushiai' ),
-  'section'    => 'sushiai_endereco',
-  'settings'   => 'text_endereco',
-)  );
 
 }
 
@@ -207,6 +209,38 @@ function is_sidebar_active( $index ){
  return false;
 } 
 
+
+/**
+ * Filters wp_title to print a neat <title> tag based on what is being viewed.
+ *
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string The filtered title.
+ */
+function theme_name_wp_title( $title, $sep ) {
+  if ( is_feed() ) {
+    return $title;
+  }
+  
+  global $page, $paged;
+
+  // Add the blog name
+  $title .= get_bloginfo( 'name', 'display' );
+
+  // Add the blog description for the home/front page.
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) ) {
+    $title .= " $sep $site_description";
+  }
+
+  // Add a page number if necessary:
+  if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+    $title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+  }
+
+  return $title;
+}
+add_filter( 'wp_title', 'theme_name_wp_title', 10, 2 );
 
 
 

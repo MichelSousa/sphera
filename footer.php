@@ -10,13 +10,13 @@
              
  			     <div class="col-lg-7">	
                
-                <a href=""><img src="<?php bloginfo("template_url")?>/img/facebook.png"></a> 
+                <a href=""><img class="transition" src="<?php bloginfo("template_url")?>/img/facebook.png"></a> 
               
             </div>   
             
             <div class="col-lg-2">
                
-                 <a href="" class="text-right"> <img src="<?php bloginfo("template_url")?>/img/twitter.png"></a> 
+                 <a href="" class="text-right"> <img class="transition" src="<?php bloginfo("template_url")?>/img/twitter.png"></a> 
              
   		    	</div>  
   			

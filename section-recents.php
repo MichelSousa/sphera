@@ -111,7 +111,7 @@
                                           <div  class="overdefult" id="<?php echo get_the_ID(); ?>" style="display:none"></div>
 
                                           <?php the_post_thumbnail('recente',array("class"=>"image")); ?>
-                                           <div class="top-box">
+                                           <div class="top-box transition">
                                             <h2 class="title-article"><?php the_title()?></h2>
                                             <h3 class="sub-title-article"><?php excerpt("10")?></h3>
                                           </div>  

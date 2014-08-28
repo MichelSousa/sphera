@@ -23,7 +23,7 @@
                          </div>
 
                           <h2><a href=""><?php the_title()?></a></h2>
-                          <?php the_content();?>
+                           <p> <?php echo excerpt("30");?><p>
 
                           <span class="col-lg-12 border-bottom"></span>
                          
